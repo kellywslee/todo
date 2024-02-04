@@ -1,11 +1,11 @@
-import TodoList from './components/TodoList/TodoList';
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
-    <>
-      <h1>To do</h1>
+    <main className="mx-auto mt-8 flex max-w-screen-md flex-col items-center gap-8 text-slate-950 ">
+      <h1 className="text-4xl">My Todo List</h1>
       <TodoList />
-    </>
+    </main>
   );
 }
 
