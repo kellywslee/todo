@@ -20,14 +20,14 @@ export default function AddTodo({ onAdd }: AddTodoProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full gap-3">
+    <form onSubmit={handleSubmit} className="flex h-12 w-full gap-3">
       <input
         type="text"
         value={title}
         onChange={handleChange}
         className="w-full rounded-lg bg-purple-100 p-2"
       />
-      <button className="rounded-lg bg-purple-300 p-2 font-bold transition-all hover:bg-purple-200 ">
+      <button className="w-20 rounded-lg bg-purple-300 font-bold shadow-md transition-all hover:bg-purple-200 ">
         Add
       </button>
     </form>
