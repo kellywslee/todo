@@ -26,7 +26,8 @@ export default function TodoList({ filter }: TodoListProps) {
 
   return (
     <section className="flex w-11/12 flex-col gap-8 md:w-2/3">
-      <ul className="flex flex-col gap-2">
+      <AddTodo onAdd={handleAdd} />
+      <ul className="flex flex-col gap-3">
         {filteredTodos.map((item) => (
           <TodoItem
             key={item.id}
@@ -36,7 +37,6 @@ export default function TodoList({ filter }: TodoListProps) {
           />
         ))}
       </ul>
-      <AddTodo onAdd={handleAdd} />
     </section>
   );
 }
