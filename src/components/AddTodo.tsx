@@ -27,7 +27,7 @@ export default function AddTodo({ onAdd }: AddTodoProps) {
         onChange={handleChange}
         className="w-full rounded-lg bg-purple-100 p-2"
       />
-      <button className="w-20 rounded-lg bg-purple-300 font-bold shadow-md transition-all hover:bg-purple-200 ">
+      <button className="w-20 rounded-lg bg-purple-300 font-bold shadow-md transition-all hover:bg-purple-200  ">
         Add
       </button>
     </form>

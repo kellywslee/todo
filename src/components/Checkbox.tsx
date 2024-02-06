@@ -15,7 +15,7 @@ export default function Checkbox({ checked, onChange, label }: CheckboxProps) {
         id="checkbox"
         checked={checked}
         onChange={onChange}
-        className="peer relative mr-6 h-5 w-5 shrink-0 appearance-none rounded-sm bg-purple-200  checked:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+        className="peer relative mr-6 h-5 w-5 shrink-0 appearance-none rounded-sm bg-purple-200  checked:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 dark:bg-purple-50"
       />
       <label htmlFor="checkbox" className="font-semibold">
         {label}
