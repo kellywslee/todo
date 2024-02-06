@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddTodo from "./AddTodo";
 import TodoItem from "./TodoItem";
 import { type Todo, type Filter } from "../lib/types";
@@ -13,6 +13,8 @@ export default function TodoList({ filter }: TodoListProps) {
     { id: "2", title: "Learn TypeScript", isCompleted: true },
   ]);
 
+  // const [todos, setTodos] = useState<Todo[]>(readTodosFromLocalStorage);
+
   const handleAdd = (todo: Todo) => {
     setTodos([...todos, todo]);
   };
@@ -22,6 +24,11 @@ export default function TodoList({ filter }: TodoListProps) {
   const handleDelete = (deleted: Todo) => {
     setTodos(todos.filter((todo) => todo.id !== deleted.id));
   };
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   const filteredTodos = getFilteredTodos(todos, filter);
 
   return (
@@ -40,6 +47,12 @@ export default function TodoList({ filter }: TodoListProps) {
     </section>
   );
 }
+
+// function readTodosFromLocalStorage(): Todo[] {
+//   console.log("readTodosFromLocalStorage");
+//   const todos = localStorage.getItem("todos");
+//   return todos ? JSON.parse(todos) : [];
+// }
 
 function getFilteredTodos(todos: Todo[], filter: Filter) {
   if (filter === "All") {

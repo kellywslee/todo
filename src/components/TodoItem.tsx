@@ -10,7 +10,7 @@ type TodoItemProps = {
 };
 
 export default function TodoItem({ todo, onUpdate, onDelete }: TodoItemProps) {
-  const { title, isCompleted } = todo;
+  const { id, title, isCompleted } = todo;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const isCompleted = e.target.checked ? true : false;
@@ -22,7 +22,12 @@ export default function TodoItem({ todo, onUpdate, onDelete }: TodoItemProps) {
   return (
     <li className="boder-2 flex items-center justify-between rounded-md bg-purple-50 p-5 shadow-md dark:bg-purple-200">
       <div className="flex items-center">
-        <Checkbox checked={isCompleted} onChange={handleChange} label={title} />
+        <Checkbox
+          checked={isCompleted}
+          onChange={handleChange}
+          label={title}
+          id={id}
+        />
       </div>
       <button onClick={handleDelete} aria-label="delete">
         <RiDeleteBinLine className="text-xl text-purple-400 transition-all hover:text-purple-900 dark:text-purple-700" />
